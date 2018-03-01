@@ -12,14 +12,23 @@ class TestPhoneBook(unittest.TestCase):
     """ Test Cases """
 
     def setUp(self):
+        """ Configures fixtures and instantinates PhoneBook class """
+        # Init
         self.phonebook = PhoneBook()
+        name1 = 'Guido'
+        name2 = 'Kendrick Lamar'
+        name3 = 'Tupac Amaru Shakur'
+        num1 = +254721987654
+        num2 = +254721654987
+        num3 = +123455689999
 
     def test_for_empty_dict_on_init(self):
+        """ Test that class initializes with an empty phone book """
         self.assertIsInstance(self.phonebook, dict, 'Should Init with empty dict')
 
 
 # Initialization - Test cases
-# test inits an empty phone book (dict)
+# 
 
 # Addition - Test cases
 # test adds a name and number as key value pairs

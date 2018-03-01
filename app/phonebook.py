@@ -8,11 +8,11 @@ Features:
     View contacts
 """
 
-class PhoneBook(object):
-    """ Class holds methods taht manage a phone book """
+class PhoneBook(dict):
+    """ Subclassed to dict, holds methods that manage a phone book """
     def __init__(self):
         """ Init with an empty dict """
-        pass
+        phonebook = {}
 
     def add_contact(self, name, number=None):
         """ Add a contact """
