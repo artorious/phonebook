@@ -8,7 +8,7 @@ Features:
     View contacts
 """
 
-class PhoneBook(dict):
+class PhoneBook(object):
     """ Class holds methods taht manage a phone book """
     def __init__(self):
         """ Init with an empty dict """

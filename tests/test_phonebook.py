@@ -6,10 +6,17 @@ Usage:
 """
 
 import unittest
-from phonebook import PhoneBook
+from app.phonebook import PhoneBook
 
 class TestPhoneBook(unittest.TestCase):
-    pass
+    """ Test Cases """
+
+    def setUp(self):
+        self.phonebook = PhoneBook()
+
+    def test_for_empty_dict_on_init(self):
+        self.assertIsInstance(self.phonebook, dict, 'Should Init with empty dict')
+
 
 # Initialization - Test cases
 # test inits an empty phone book (dict)
