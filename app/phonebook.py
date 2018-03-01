@@ -12,7 +12,7 @@ class PhoneBook(dict):
     """ Subclassed to dict, holds methods that manage a phone book """
     def __init__(self):
         """ Init with an empty dict """
-        phonebook = {}
+        self.phonebook = {}
 
     def add_contact(self, name, number=None):
         """ Add a contact """
@@ -22,7 +22,7 @@ class PhoneBook(dict):
         """ View contacts """
         pass
     
-    def update_contact(self, name):
+    def update_contact(self, name, number):
         """ Update contacts """
         pass
     

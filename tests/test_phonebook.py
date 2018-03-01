@@ -14,50 +14,39 @@ class TestPhoneBook(unittest.TestCase):
     def setUp(self):
         """ Configures fixtures and instantinates PhoneBook class """
         # Init
-        self.phonebook = PhoneBook()
-        name1 = 'Guido'
-        name2 = 'Kendrick Lamar'
-        name3 = 'Tupac Amaru Shakur'
-        num1 = +254721987654
-        num2 = +254721654987
-        num3 = +123455689999
-
+        self.playbook = PhoneBook()
+    
+    
     def test_for_empty_dict_on_init(self):
         """ Test that class initializes with an empty phone book """
-        self.assertIsInstance(self.phonebook, dict, 'Should Init with empty dict')
+        self.assertIsInstance(
+            self.playbook, dict, 'Should Init with empty dict')
+    
+    def test_add_contact_method_adds_a_contact(self):
+        result1 = {'Guido': +254721987654}
+        self.assertEqual(result1, self.playbook.add_contact('Guido', 254721987654))
+    
+    def test_view_contact_method_displays_contents(self):
+        result2 = {'van': +254721654987, 'Guido': +254721987654}
+        result3 = {'van': +254721654987}
 
+        self.assertEqual(result2, self.playbook.view_contact())
+        self.assertEqual(result3, self.playbook.view_contact('van'))
 
-# Initialization - Test cases
-# 
+    def test_delete_contact_method(self):
+        result4 = {'van': +254721654987}
+        self.playbook = {'van': +254721654987, 'Guido': +254721987654}
+        self.assertDictEqual(result4, self.playbook.delete_contact('Guido'))
 
-# Addition - Test cases
-# test adds a name and number as key value pairs
-# test num is int, custom msg if not
-# test name is str, custom msg if not
+    def test_update_contact_method(self):
+        result4 = {'van': +254721654987}
+        self.assertEqual(result4, self.playbook.update_contact('van', +254721654987))
 
-# Views - Test cases
-# test dispalys name (key) and associated number
-# test custom msg if empty
-# test dispalys all contacts when called without param name
-
-
-# Update - Test cases
-# test updates key:value pair matching name (key)
-# test custom msg if name not found
-# test custom msg before overwriting
-
-# Delete - Test cases
-# test deletes key:value pair matching name (key)
-# test custom msg if successful
-# test custom msg if name not found
-
-
-
-
-
-
-
-
+        
 
 if __name__ == '__main__':
     unittest.main()
+
+
+        
+
