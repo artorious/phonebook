@@ -16,23 +16,28 @@ class PhoneBook(dict):
 
     def add_contact(self, name, number=None):
         """ Add a contact """
-        pass
+        self.phonebook[name] = number
+        return self.phonebook
     
     def view_contact(self, name=False):
         """ View contacts """
-        pass
+        print(self.phonebook)
     
     def update_contact(self, name, number):
         """ Update contacts """
-        pass
+        self.phonebook[name] = number
+        return self.phonebook
     
     def delete_contact(self, name):
         """ Delete a contact """
-        pass
+        self.phonebook.pop(name, 'Name not found')
 
 
 def main():
-    pass
+    result2 = {'van': +254721654987, 'Guido': +254721987654}
+    result3 = {'van': +254721654987}
+
+    result2.view_contact()
 
 if __name__ == '__main__':
     main()

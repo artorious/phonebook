@@ -24,7 +24,8 @@ class TestPhoneBook(unittest.TestCase):
     
     def test_add_contact_method_adds_a_contact(self):
         result1 = {'Guido': +254721987654}
-        self.assertEqual(result1, self.playbook.add_contact('Guido', 254721987654))
+        self.assertEqual(
+            result1, self.playbook.add_contact('Guido', 254721987654))
     
     def test_view_contact_method_displays_contents(self):
         result2 = {'van': +254721654987, 'Guido': +254721987654}
@@ -40,7 +41,8 @@ class TestPhoneBook(unittest.TestCase):
 
     def test_update_contact_method(self):
         result4 = {'van': +254721654987}
-        self.assertEqual(result4, self.playbook.update_contact('van', +254721654987))
+        self.assertEqual(
+            result4, self.playbook.update_contact('van', +254721654987))
 
         
 

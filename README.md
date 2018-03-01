@@ -7,4 +7,14 @@
         <dd>View contacts</dd>
 <dl>
 
+# Usage
+Run tests
+<pre>
+$ nosetests3 -v --rednose test_phonebook.py
+</pre>
+or 
+
+<pre>
+$ pytest test_phonebook.py
+</pre>
 
