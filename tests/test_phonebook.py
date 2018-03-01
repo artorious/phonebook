@@ -13,42 +13,50 @@ class TestPhoneBook(unittest.TestCase):
 
     def setUp(self):
         """ Configures fixtures and instantinates PhoneBook class """
-        # Init
-        self.playbook = PhoneBook()
-    
+        pass
     
     def test_for_empty_dict_on_init(self):
         """ Test that class initializes with an empty phone book """
-        self.assertIsInstance(
-            self.playbook, dict, 'Should Init with empty dict')
+        pass
     
-    def test_add_contact_method_adds_a_contact(self):
-        result1 = {'Guido': +254721987654}
-        self.assertEqual(
-            result1, self.playbook.add_contact('Guido', 254721987654))
+    def test_add_contact_method_adds_contacts(self):
+        """ Test addition of name and number as key value pairs """
+        pass
+    
+    def test_add_contact_method_handles_invalid_values(self):
+        """ Test handling of invalid value for number during addition """
+        pass
+
+    def test_add_contact_method_handles_invalid_values(self):
+        """ Test handling already existing name-number pair """
+        pass
     
     def test_view_contact_method_displays_contents(self):
-        result2 = {'van': +254721654987, 'Guido': +254721987654}
-        result3 = {'van': +254721654987}
+        """ Test dispaly of phone book entries """
+        pass
+    
+    def test_view_contact_method_displays_contents(self):
+        """ Test dispaly of notification when phonebook is empty """
+        pass
 
-        self.assertEqual(result2, self.playbook.view_contact())
-        self.assertEqual(result3, self.playbook.view_contact('van'))
+    def test_update_contact_method_makes_required_changes(self):
+        """ Test update of name-number pair as required """
+        pass
 
-    def test_delete_contact_method(self):
-        result4 = {'van': +254721654987}
-        self.playbook = {'van': +254721654987, 'Guido': +254721987654}
-        self.assertDictEqual(result4, self.playbook.delete_contact('Guido'))
+    def test_update_contact_method_reports_changes(self):
+        """ Test reporting or update operation success/fail status """
+        pass
 
-    def test_update_contact_method(self):
-        result4 = {'van': +254721654987}
-        self.assertEqual(
-            result4, self.playbook.update_contact('van', +254721654987))
-
-        
+    def test_delete_contact_method_removes_contact(self):
+        """ Test deletion of name-number pair matching name """
+        pass
+    
+    def test_delete_contact_method_reports_changes(self):
+        """ Test reporting of delete operation success/fail status """
+        pass
 
 if __name__ == '__main__':
     unittest.main()
 
 
-        
 

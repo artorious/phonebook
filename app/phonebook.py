@@ -8,36 +8,32 @@ Features:
     View contacts
 """
 
-class PhoneBook(dict):
+class PhoneBook(object):
     """ Subclassed to dict, holds methods that manage a phone book """
     def __init__(self):
         """ Init with an empty dict """
-        self.phonebook = {}
+        pass
 
-    def add_contact(self, name, number=None):
-        """ Add a contact """
-        self.phonebook[name] = number
-        return self.phonebook
+    def add_contact(self, name, number):
+        """ Adds a contact to phonebook """
+        pass
     
     def view_contact(self, name=False):
-        """ View contacts """
-        print(self.phonebook)
+        """ View contacts in phone book """
+        # print(self.phonebook)
+        pass
     
     def update_contact(self, name, number):
-        """ Update contacts """
-        self.phonebook[name] = number
-        return self.phonebook
+        """ Update contacts in phonebook """
+        pass
     
     def delete_contact(self, name):
-        """ Delete a contact """
-        self.phonebook.pop(name, 'Name not found')
+        """ Delete a contact from phone book """
+        pass
 
 
 def main():
-    result2 = {'van': +254721654987, 'Guido': +254721987654}
-    result3 = {'van': +254721654987}
-
-    result2.view_contact()
+    pass
 
 if __name__ == '__main__':
     main()
