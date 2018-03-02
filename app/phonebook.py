@@ -12,24 +12,27 @@ class PhoneBook(object):
     """ Subclassed to dict, holds methods that manage a phone book """
     def __init__(self):
         """ Init with an empty dict """
-        pass
+        self.phonebook = {}
 
     def add_contact(self, name, number):
         """ Adds a contact to phonebook """
-        pass
-    
+        if isinstance(number, int):
+            self.phonebook[name] = number
+            return self.phonebook
+        else:
+            return 'Oops... Invalid Entry'
+
     def view_contact(self, name=False):
         """ View contacts in phone book """
-        # print(self.phonebook)
-        pass
+        return
     
     def update_contact(self, name, number):
         """ Update contacts in phonebook """
-        pass
+        return
     
     def delete_contact(self, name):
         """ Delete a contact from phone book """
-        pass
+        return
 
 
 def main():
