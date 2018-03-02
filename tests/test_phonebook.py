@@ -19,7 +19,7 @@ class TestPhoneBook(unittest.TestCase):
         self.sample2 = {'vlad': 12345}
         self.sample3 = {'Tim': 67890, 'vlad': 12345}
         self.errmsg1 = 'Oops... Invalid Entry'
-        self.errmsg2 = 'Oops... Contact already exists'
+        self.errmsg2 = 'Oops... Phonebook empty'
         self.errmsg3 = 'Success'
 
     def test_add_contact_method_adds_contacts(self):
@@ -30,16 +30,14 @@ class TestPhoneBook(unittest.TestCase):
         """ Test handling of invalid value for number during addition """
         self.assertEqual(self.errmsg1, self.phonebook.add_contact('vlad', '12345'))
         
-
-    
-    # def test_view_contact_method_displays_contents(self):
-    #     """ Test dispaly of phone book entries """
-    #     self.assertEqual(self.errmsg3, self.phonebook.view_contact() )
+    def test_view_contact_method_displays_contents(self):
+        """ Test dispaly of phone book entries """
+        self.assertEqual(self.errmsg3, self.phonebook.view_contact())
         
     
-    # def test_view_contact_method_displays_contents(self):
-    #     """ Test dispaly of notification when phonebook is empty """
-    #     pass
+    def test_view_contact_method_displays_contents(self):
+        """ Test dispaly of notification when phonebook is empty """
+        self.assertEqual(self.errmsg2, self.phonebook.view_contact())
 
     # def test_update_contact_method_makes_required_changes(self):
     #     """ Test update of name-number pair as required """

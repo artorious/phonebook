@@ -7,6 +7,7 @@ Features:
     Delete contacts
     View contacts
 """
+from pprint import pprint
 
 class PhoneBook(object):
     """ Subclassed to dict, holds methods that manage a phone book """
@@ -24,7 +25,12 @@ class PhoneBook(object):
 
     def view_contact(self, name=False):
         """ View contacts in phone book """
-        return
+        if name and (name in self.phonebook):
+            print(Name : self.phonebook[name])
+        if len(self.phonebook) != 1:
+            pprint(self.phonebook, width=1)
+        else:
+            return 'Oops... Phonebook empty'
     
     def update_contact(self, name, number):
         """ Update contacts in phonebook """
