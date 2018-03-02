@@ -26,8 +26,8 @@ class PhoneBook(object):
     def view_contact(self, name=False):
         """ View contacts in phone book """
         if name and (name in self.phonebook):
-            print(Name : self.phonebook[name])
-        if len(self.phonebook) != 1:
+            print(Name ,':', self.phonebook[name])
+        elif len(self.phonebook) >= 1 :
             pprint(self.phonebook, width=1)
         else:
             return 'Oops... Phonebook empty'
@@ -38,7 +38,10 @@ class PhoneBook(object):
     
     def delete_contact(self, name):
         """ Delete a contact from phone book """
-        return
+        if len(self.phonebook) > 0 and name in self.phonebook:
+            del self.phonebook[name]
+        else:
+            return  'Oops... Phonebook empty'
 
 
 def main():

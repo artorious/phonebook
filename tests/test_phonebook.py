@@ -34,26 +34,26 @@ class TestPhoneBook(unittest.TestCase):
         """ Test dispaly of phone book entries """
         self.assertEqual(self.errmsg3, self.phonebook.view_contact())
         
-    
     def test_view_contact_method_displays_contents(self):
         """ Test dispaly of notification when phonebook is empty """
+        self.phonebook = PhoneBook()
         self.assertEqual(self.errmsg2, self.phonebook.view_contact())
 
     # def test_update_contact_method_makes_required_changes(self):
     #     """ Test update of name-number pair as required """
     #     pass
 
-    # def test_update_contact_method_reports_changes(self):
-    #     """ Test reporting or update operation success/fail status """
-    #     pass
+    def test_update_contact_method_reports_changes(self):
+        """ Test reporting or update operation success/fail status """
+        pass
 
-    # def test_delete_contact_method_removes_contact(self):
-    #     """ Test deletion of name-number pair matching name """
-    #     pass
+    def test_delete_contact_method_removes_contact(self):
+        """ Test deletion of name-number pair matching name """
+        self.assertEqual(self.sample2, self.phonebook.delete_contact('Vlad'))
     
-    # def test_delete_contact_method_reports_changes(self):
-    #     """ Test reporting of delete operation success/fail status """
-    #     pass
+    def test_delete_contact_method_reports_changes(self):
+        """ Test reporting of delete operation success status """
+        self.assertEqual(self.errmsg2, self.phonebook.delete_contact('Tim'))
 
 if __name__ == '__main__':
     unittest.main()
